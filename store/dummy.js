@@ -14,7 +14,9 @@ async function get(tabla, id){
 }
 
 async function upsert(tabla, data){
-    db[collection].push(data);
+    //console.log(data);
+    db[tabla].push(data);
+    return data;
 }
 
 async function remove(tabla, id){
