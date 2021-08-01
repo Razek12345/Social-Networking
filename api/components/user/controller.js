@@ -32,9 +32,16 @@ module.exports = function (injectedStore){
         return store.upsert(TABLA, user);
     }
 
+    function remove(body) {
+        console.log("Eliminando nro: ", body.id);
+
+        return store.remove(TABLA, body.id);
+    }
+
     return {
         list,
         get,
         upsert,
+        remove,
     };
 };

@@ -20,7 +20,8 @@ async function upsert(tabla, data){
 }
 
 async function remove(tabla, id){
-    return true;
+    db[tabla].splice(db[tabla].findIndex(item => item.id == id), 1);
+    return id;
 }
 
 module.exports = {
